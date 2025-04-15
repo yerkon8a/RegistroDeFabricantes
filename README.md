@@ -59,3 +59,48 @@ JSON
 5. DELETE Eliminar Maker (/api/maker/delete/{id}):
 Método: DELETE
 URL: http://localhost:8080/api/maker/delete/1
+--------------------------------------------------------------------
+6. GET para buscar por ID (/api/product/find/{id}):
+Método: GET
+URL: http://localhost:8080/api/product/find/1
+
+7. GET para listar todos (/api/product/findAll):
+Método: GET
+URL: http://localhost:8080/api/product/findAll
+
+8. POST para crear nuevo producto (/api/product/save):
+Método: POST
+URL: http://localhost:8080/api/product/save
+Headers:
+Content-Type: application/json
+Body (raw, JSON):
+JSON
+{
+    "nombre": "Mouse",
+    "precio": 100.00,
+    "maker": {
+        "id": 1,
+        "nombre": "HP"
+    }
+}
+
+9. PUT Actualizar producto (/api/product/update/{id}):
+Método: PUT
+URL: http://localhost:8080/api/product/update/1
+Headers:
+Content-Type: application/json
+Body (raw, JSON):
+JSON
+{
+    "nombre": "Mouse",
+    "precio": 120.00,
+    "maker": {
+        "id": 2,
+        "nombre": "HP-2100"
+    }
+}
+
+
+10. DELETE Eliminar producto (/api/product/delete/{id}):
+Método: DELETE
+URL: http://localhost:8080/api/product/delete/1
