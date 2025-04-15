@@ -26,6 +26,8 @@ Patrones de diseño DTO y DAO
 
 Desacoplamiento de capas.
 
+---------------------------------------------------------------------------
+
 Operaciones en Postman:
 
 1. GET para buscar por ID:
