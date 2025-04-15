@@ -104,3 +104,33 @@ JSON
 10. DELETE Eliminar producto (/api/product/delete/{id}):
 Método: DELETE
 URL: http://localhost:8080/api/product/delete/1
+------------------------------------------------------------------------------
+SQL para generar tablas e insert:
+
+-- Creación de la tabla fabricante
+CREATE TABLE fabricante (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(30) NOT NULL
+);
+
+-- Creación de la tabla producto
+CREATE TABLE producto (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(30) NOT NULL,
+    precio DECIMAL(10, 2) NOT NULL,
+    id_fabricante INTEGER NOT NULL,
+    FOREIGN KEY (id_fabricante) REFERENCES fabricante(id)
+);
+
+-- Inserciones en la tabla fabricante
+INSERT INTO fabricante (nombre) VALUES ('Fabricante A');
+INSERT INTO fabricante (nombre) VALUES ('Fabricante B');
+INSERT INTO fabricante (nombre) VALUES ('Fabricante C');
+
+-- Inserciones en la tabla producto
+INSERT INTO producto (nombre, precio, id_fabricante) VALUES ('Producto 1', 100.50, 1);
+INSERT INTO producto (nombre, precio, id_fabricante) VALUES ('Producto 2', 250.75, 1);
+INSERT INTO producto (nombre, precio, id_fabricante) VALUES ('Producto 3', 50.00, 2);
+INSERT INTO producto (nombre, precio, id_fabricante) VALUES ('Producto 4', 120.20, 2);
+INSERT INTO producto (nombre, precio, id_fabricante) VALUES ('Producto 5', 300.00, 3);
+INSERT INTO producto (nombre, precio, id_fabricante) VALUES ('Producto 6', 80.99, 3);
